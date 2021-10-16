@@ -1,12 +1,15 @@
 \
 
-\hi,\
+
+\Hi,\
 
 
-\I'm Gabriel Ladzaretti - I'm a Full Stack Developer.\
+\I'm Gabriel Ladzaretti - I'm a Full Stack developer 
+with a backend orientation.\
 
 
-\Let's work togather!\
+\Contact me & 
+let's work togather!\
 
 
 Desktop:~gbi$\
