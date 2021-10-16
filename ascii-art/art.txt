@@ -1,10 +1,12 @@
+\
+
+\hi,\
 
 
-
-hi, 
-
-
-I'm Gabriel Ladzaretti - I'm a Full Stack Developer.
+\I'm Gabriel Ladzaretti - I'm a Full Stack Developer.\
 
 
-Let's work togather!
+\Let's work togather!\
+
+
+Desktop:~gbi$\
