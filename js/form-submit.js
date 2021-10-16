@@ -13,9 +13,11 @@ async function handleSubmit(event) {
   })
     .then((response) => {
       alert("Thanks for your submission!");
+      document.getElementById("close-btn").click();
       form.reset();
     })
     .catch((error) => {
+      console.error(error);
       alert("Oops! There was a problem submitting your form");
     });
 }
