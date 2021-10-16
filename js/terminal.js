@@ -5,6 +5,8 @@ const terminaDocklIcon = document.querySelector("#terminal-icon");
 const terminalRed = document.querySelector(".circle.red");
 const terminalYellow = document.querySelector(".circle.yellow");
 const terminalGreen = document.querySelector(".circle.green");
+const topBar = document.querySelector(".title");
+
 // Terminal events
 function visable(el) {
   return !!(
@@ -25,18 +27,20 @@ function toggleDisplay(el, disp) {
     toggleDisplay(terminal, "block");
     if (item == terminalRed)
       terminaDocklIcon.classList.toggle("li-first", false);
-    if (item == terminaDocklIcon)
+    if (item == terminaDocklIcon) {
+      terminal.classList.remove("fade-in-animation");
       terminaDocklIcon.classList.toggle("li-first", true);
+    }
   })
 );
 
+topBar.addEventListener("dblclick", () => {
+  terminal.classList.toggle("terminal-maximize");
+  updateBashSize();
+});
+
 terminalYellow.addEventListener("click", () => {
   terminal.classList.toggle("terminal-maximize");
-  if (terminalYellow.dataset.maximize === "false") {
-    terminalYellow.dataset.maximize = "true";
-  } else {
-    terminalYellow.dataset.maximize = "false";
-  }
   updateBashSize();
 });
 

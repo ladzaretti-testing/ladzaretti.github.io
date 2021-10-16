@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<!-- TODO: change grid system in the project section so it will have 4 cards per row -->
-<!-- TODO: add live links to the card section -->
-<!-- TODO: elarge project's images when clicked on -->
 
 <html lang="en">
   <head>
@@ -127,45 +124,52 @@
       "
     >
       <div
-        class="clickable"
+        class="d-flex clickable align-items-center"
         data-bs-toggle="tooltip"
         title="Click to change background color"
-      ></div>
-
-      <div class="terminal-container menlo-font">
+      >
+        <div class="back-title p-5 m-auto">
+          <h1 class="pb-1">
+            Gabriel <br />
+            Ladzaretti
+          </h1>
+          <h2>
+            <span
+              >Full Stack <br />
+              Developer</span
+            >
+          </h2>
+        </div>
+      </div>
+      <div class="terminal-container menlo-font fade-in-animation">
         <div class="terminal terminal-shadow">
           <div class="top">
             <div class="btns">
               <span class="circle red"></span>
-              <span class="circle yellow" data-maximize="false"></span>
+              <span class="circle yellow"></span>
               <span class="circle green"></span>
             </div>
             <div class="title"></div>
           </div>
           <p class="body text-start">
-            <span class="typewriter"></span>
-            <span class="cursor">_</span>
-
+            <span>Desktop:~gbi$</span
+            ><span class="typewriter" style="white-space: pre-wrap"></span
+            ><span class="cursor">_</span>
             <script src="js/typewriter.js"></script>
             <script>
-              typewriter(
-                ".typewriter",
-                "Full Stack Developer MongoDB | Express.js | React | Node.js",
-                50,
-                1000
-              );
-              typewriter(
-                ".typewriter",
-                "Full Stack Developer MongoDB | Express.js | React | Node.js",
-                50,
-                5000
-              );
-              typewriter(
-                ".typewriter",
-                "\n\nFull Stack Developer MongoDB | Express.js | React | Node.js",
-                50,
-                9000
-              );
+              typewriterFetch(".typewriter", "ascii-art/art.txt", 30, 4000);
+              // typewriter(
+              //   ".typewriter",
+              //   "Full Stack Developer MongoDB | Express.js | React | Node.js",
+              //   50,
+              //   5000
+              // );
+              // typewriter(
+              //   ".typewriter",
+              //   "\n\nFull Stack Developer MongoDB | Express.js | React | Node.js",
+              //   50,
+              //   9000
+              // );
             </script>
           </p>
         </div>
@@ -225,51 +229,16 @@
             <h5 class="m-auto">Gabriel Ladzaretti</h5>
           </div> -->
         </div>
-        <!-- <div class="about-content p-5 pt-3 m-auto">
-          <hr />
-          <p>
-            👋 Hi, I’m @ladzaretti ... Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Laudantium consequuntur veniam numquam ab harum
-            eos ducimus ex hic? Rerum, maiores?-
-          </p>
-
-          <p>
-            👀 I’m interested in ... - Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Minus, necessitatibus.
-          </p>
-
-          <p>
-            🌱 I’m currently learning ... - Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Officiis vero similique nulla esse
-            excepturi reiciendis.
-          </p>
-
-          <p>💞️ I’m looking to collaborate on ... -</p>
-
-          <p>📫 How to reach me ... -</p>
-
-          <p>📺 I also am starting to make educational</p>
-
-          <p>🖥️ I am passionate about</p>
-
-          <p>
-            💾
-            <a href="">JavaScript</a>,
-            <a href="https://nodejs.org/en/docs/guides/" target="_blank"
-              >Nodejs</a
-            >, and <a href="http://www.cplusplus.com/" target="_blank">C++</a>.
-          </p>
-
-          <p>
-            💻
-          </p>
-
-        </div> -->
         <div class="p-5 pt-3 m-auto pb-3">
           <h5 class="m-auto text-center">
             <hr />
-            👋 I'm Gabi an enthusiastic, fast and thorough learner, fascinated
-            about computer science and technology.
+            <!-- 👋 I'm Gabi an enthusiastic, fast and thorough learner, fascinated
+            about computer science and technology. -->
+            Being driven by the love of knowledge, <br />
+            I consider my best skill to be - <br />
+            The ability to grasp new concepts fast and apply them meaningfully.
+            <br />
+
             <hr />
           </h5>
         </div>
@@ -312,7 +281,7 @@
                   data-bs-toggle="collapse"
                   data-bs-target="#item2"
                 >
-                  💾 Skills & Languages
+                  💻 Languages & Frameworks
                 </button>
               </h2>
               <div
@@ -321,9 +290,14 @@
                 data-bs-parent="#about-accordion"
               >
                 <div class="accordion-body">
-                  C, Java, Spring, Spring-MVC, Html, CSS, Python, OOP, Linux,
-                  Git, Scheme, SQL, Data structures, Algorithms, Assembly –
-                  MIPS.
+                  Javascript, <span>React.js</span>, Node.js,
+                  <span>Express.js</span>. <br />HTML, <span>Bootstrap 5</span>,
+                  css ,<span>Sass</span>,
+                  <br />
+                  <span>C</span>, Python,
+                  <br />
+                  <span>Java</span>, Spring, Spring-MVC.
+                  <br />
                 </div>
               </div>
             </div>
@@ -336,7 +310,7 @@
                   data-bs-toggle="collapse"
                   data-bs-target="#item3"
                 >
-                  🔨 Tools
+                  💾 Databases
                 </button>
               </h2>
               <div
@@ -344,7 +318,11 @@
                 class="accordion-collapse collapse"
                 data-bs-parent="#about-accordion"
               >
-                <div class="accordion-body">VS code, intellij, pycharm</div>
+                <div class="accordion-body">
+                  <span>MongoDB</span>. <br />
+                  mySQL, PostgreSQL, Sequelize. <br />
+                  hibernate.
+                </div>
               </div>
             </div>
             <!-- item4 -->
@@ -356,7 +334,7 @@
                   data-bs-toggle="collapse"
                   data-bs-target="#item4"
                 >
-                  💼 Experience
+                  🔨 Tools
                 </button>
               </h2>
               <div
@@ -364,12 +342,16 @@
                 class="accordion-collapse collapse"
                 data-bs-parent="#about-accordion"
               >
-                <div class="accordion-body">Mechanical design engineer</div>
+                <div class="accordion-body">
+                  Linux, Git. <br />
+                  npm, yarn, webpack.
+                  <br />
+                  VS code, intellij, pycharm. <br />
+                </div>
               </div>
-              <!-- 💻📫👀🌱👋🌌📚📦Hi, I’m @ladzaretti ... -->
-              <!-- item5 -->
             </div>
-            <div class="accordion-item">
+            <!-- item5 -->
+            <!-- <div class="accordion-item">
               <h2 class="accordion-header">
                 <button
                   class="accordion-button collapsed"
@@ -377,7 +359,7 @@
                   data-bs-toggle="collapse"
                   data-bs-target="#item5"
                 >
-                  📦 What i bring with me
+                  📚 Skills
                 </button>
               </h2>
               <div
@@ -386,8 +368,36 @@
                 data-bs-parent="#about-accordion"
               >
                 <div class="accordion-body">
-                  Individually motivated, independent and dependable team
-                  player.
+                  Data structures, Algorithms. <br />
+                  Operating systes. <br />
+                  OOP, Functional Programming.
+                </div>
+              </div>
+            </div> -->
+            <!-- 💻📫👀🌱👋🌌📚📦Hi, I’m @ladzaretti ... -->
+            <!-- item6 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#item6"
+                >
+                  📦 What i bring with me
+                </button>
+              </h2>
+              <div
+                id="item6"
+                class="accordion-collapse collapse"
+                data-bs-parent="#about-accordion"
+              >
+                <div class="accordion-body">
+                  Can do attitude, <br />
+                  Team-minded & Collaborative approach, <br />
+                  High efficiency, <br />
+                  High motivation. <br />
+                  <br />
                 </div>
               </div>
             </div>
