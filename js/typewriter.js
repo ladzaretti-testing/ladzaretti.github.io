@@ -1,35 +1,38 @@
 // typewriter effect
 
-function typewriterFetch(selector, path, ms = 50, deley = 0) {
-  let i = 0;
-  let type = (str) => {
-    if (i < str.length) {
-      let char = str[i];
-      document.querySelector(selector).innerHTML += char === "\n" ? "" : char;
-      i++;
-      setTimeout(() => type(str), ms);
+let i = 0;
+let type = (str, el, ms) => {
+  if (i < str.length) {
+    let char = str[i];
+    let output = "";
+    if (char == "\\") {
+      let substr = "";
+      while (++i < str.length && str[i] !== "\\") {
+        substr += str[i];
+      }
+      output = substr;
+    } else {
+      output = char === "\n" ? "" : char;
     }
-  };
+    i++;
+    el.innerHTML += output;
+    setTimeout(() => type(str, el, ms), ms);
+  }
+};
+
+function typewriterFetch(selector, path, ms = 50, deley = 0) {
   fetch(path)
     .then((res) => res.text())
     .then((text) =>
       setTimeout(() => {
-        console.log(`|${text}|`);
-
-        type(text);
+        type(text, document.querySelector(selector), ms);
       }, deley)
     );
 }
 
 function typewriter(selector, str, ms = 50, deley = 0) {
   let i = 0;
-  let type = () => {
-    if (i < str.length) {
-      let char = str[i];
-      document.querySelector(selector).innerHTML += char === "\n" ? "" : char;
-      i++;
-      setTimeout(type, ms);
-    }
-  };
-  setTimeout(type, deley);
+  setTimeout(() => {
+    type(str, document.querySelector(selector), ms);
+  }, deley);
 }

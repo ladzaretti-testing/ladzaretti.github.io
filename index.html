@@ -157,7 +157,7 @@
             ><span class="cursor">_</span>
             <script src="js/typewriter.js"></script>
             <script>
-              typewriterFetch(".typewriter", "ascii-art/art.txt", 30, 4000);
+              typewriterFetch(".typewriter", "ascii-art/art.txt", 50, 4000);
               // typewriter(
               //   ".typewriter",
               //   "Full Stack Developer MongoDB | Express.js | React | Node.js",
@@ -236,7 +236,7 @@
             about computer science and technology. -->
             Being driven by the love of knowledge, <br />
             I consider my best skill to be - <br />
-            The ability to grasp new concepts fast and apply them meaningfully.
+            The ability to grasp & apply new concepts quickly.
             <br />
 
             <hr />
@@ -430,7 +430,9 @@
                 </p>
                 <div class="d-flex justify-content-center mx-auto">
                   <div class="text-center rotate">
-                    <a href="#"
+                    <a
+                      href="https://github.com/ladzaretti/wintile"
+                      target="_blank"
                       ><h5><i class="bi bi-github mx-1"></i></h5
                     ></a>
                   </div>
@@ -459,7 +461,11 @@
                 </p>
                 <div class="text-center rotate">
                   <h5>
-                    <a href="#"><i class="bi bi-github mx-1"></i></a>
+                    <a
+                      href="https://github.com/ladzaretti/portfolio-website"
+                      target="_blank"
+                      ><i class="bi bi-github mx-1"></i
+                    ></a>
                   </h5>
                 </div>
               </div>
@@ -486,7 +492,11 @@
                 </p>
                 <div class="text-center rotate">
                   <h5>
-                    <a href="#"><i class="bi bi-github mx-1"></i></a>
+                    <a
+                      href="https://github.com/ladzaretti/javaRMI-srv-client-game-hosting"
+                      target="_blank"
+                      ><i class="bi bi-github mx-1"></i
+                    ></a>
                   </h5>
                 </div>
               </div>
@@ -509,7 +519,11 @@
                 </p>
                 <div class="text-center rotate">
                   <h5>
-                    <a href="#"><i class="bi bi-github mx-1"></i></a>
+                    <a
+                      href="https://github.com/ladzaretti/Assembler"
+                      target="_blank"
+                      ><i class="bi bi-github mx-1"></i
+                    ></a>
                   </h5>
                 </div>
               </div>
@@ -532,7 +546,9 @@
                 </p>
                 <div class="text-center rotate">
                   <h5>
-                    <a href="#"><i class="bi bi-github mx-1"></i></a>
+                    <a href="https://github.com/ladzaretti/xv6" target="_blank"
+                      ><i class="bi bi-github mx-1"></i
+                    ></a>
                   </h5>
                 </div>
               </div>
@@ -555,7 +571,11 @@
                 </p>
                 <div class="text-center rotate">
                   <h5>
-                    <a href="#"><i class="bi bi-github mx-1"></i></a>
+                    <a
+                      href="https://github.com/ladzaretti/smash_bg_fg"
+                      target="_blank"
+                      ><i class="bi bi-github mx-1"></i
+                    ></a>
                   </h5>
                 </div>
               </div>
@@ -669,7 +689,11 @@
       aria-hidden="true"
     >
       <div class="modal-dialog quicksand-font modal-dialog-centered">
-        <form action="">
+        <form
+          id="modal-form"
+          action="https://formspree.io/f/xqkwoayl"
+          method="POST"
+        >
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="formLabel">Contact Me</h5>
@@ -687,15 +711,31 @@
               </p>
               <div class="mb-3">
                 <label for="Name" class="col-form-label">Name: </label>
-                <input type="text" class="form-control" id="Name" />
+                <input type="text" name="name" class="form-control" id="Name" />
                 <label for="email" class="col-form-label"> Email: </label>
-                <input type="email" class="form-control" id="email" required />
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  id="email"
+                  required
+                />
                 <label for="phone" class="col-form-label"> Phone: </label>
-                <input type="tel" class="form-control" id="phone" />
+                <input
+                  type="tel"
+                  name="phone"
+                  class="form-control"
+                  id="phone"
+                />
                 <label for="exampleFormControlTextarea1" class="form-label"
                   >Message</label
                 >
-                <textarea class="form-control" rows="5" required></textarea>
+                <textarea
+                  class="form-control"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
               </div>
             </div>
             <div class="modal-footer">
@@ -706,7 +746,9 @@
               >
                 Close
               </button>
-              <button type="submit" class="btn btn-accent">Submit</button>
+              <button type="submit" class="btn btn-accent" data-dismiss="modal">
+                Submit
+              </button>
             </div>
           </div>
         </form>
@@ -724,4 +766,5 @@
     crossorigin="anonymous"
   ></script>
   <script type="module" src="js/main.js"></script>
+  <script src="js/form-submit.js"></script>
 </html>
