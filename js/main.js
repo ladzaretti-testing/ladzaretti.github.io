@@ -151,11 +151,11 @@ darkModeToggler.addEventListener("click", (e) => {
   const el = e.target;
   toogleTheme();
   if (el.dataset.dark_mode_on === "true") {
-    color = colorGen(lightBackgroundModes);
+    color = colorGen(darkBackgroundModes);
     changeBG(color.next().value);
     el.dataset.dark_mode_on = "false";
   } else {
-    color = colorGen(darkBackgroundModes);
+    color = colorGen(lightBackgroundModes);
     changeBG(color.next().value);
     el.dataset.dark_mode_on = "true";
   }
