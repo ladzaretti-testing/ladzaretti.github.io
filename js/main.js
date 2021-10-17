@@ -37,7 +37,7 @@ const navbar = document.querySelector(".navbar");
 const navSocialIcons = document.querySelector("#social-icons");
 const darkModeToggler = document.querySelector("#dark-mode-toggler");
 const aboutSection = document.getElementById("about");
-const accordionItems = document.querySelectorAll(".accordion-item");
+const accordionBodies = document.querySelectorAll(".accordion-item");
 const accordionButtons = document.querySelectorAll("#about button");
 const projects = document.querySelector("#projects");
 const projectsCards = document.querySelectorAll(".card");
@@ -67,24 +67,22 @@ function adjustColor(color, amount) {
 }
 
 // init color gens
-const lightColorGen = colorGen(lightBackgroundModes);
-const darkColorGen = colorGen(darkBackgroundModes);
+// const lightColorGen = colorGen(lightBackgroundModes);
+// const darkColorGen = colorGen(darkBackgroundModes);
 function changeBG(color = "#282C34") {
   rootElement.style.setProperty("--accent", color);
-  // rootElement.style.setProperty("--accent-dark", adjustColor(color, 40));
 }
 
-const btn = [].forEach.call(
-  document.querySelectorAll(".change-color"),
-  (item) =>
-    item.addEventListener("click", (e) => {
-      let color = item.dataset.color;
-      rootElement.style.setProperty("--accent", color);
-    })
-);
+// const btn = [].forEach.call(
+//   document.querySelectorAll(".change-color"),
+//   (item) =>
+//     item.addEventListener("click", (e) => {
+//       let color = item.dataset.color;
+//       rootElement.style.setProperty("--accent", color);
+//     })
+// );
 
 // Change navbar apperance based on scroll location
-const condark = document.querySelector(".toggle-container");
 navSocialIcons.style.display = "none";
 
 window.onscroll = function () {
@@ -101,41 +99,52 @@ window.onscroll = function () {
   }
 };
 
+function multiToggle(el, ...classes) {
+  classes.map((cls) => el.classList.toggle(cls));
+}
+
 // Toggle main theme color
 const toogleTheme = () => {
-  navbar.classList.toggle("navbar-light");
-  navbar.classList.toggle("navbar-dark");
-  aboutSection.classList.toggle("text-light");
-  aboutSection.classList.toggle("bg-material-grey-background");
-  modalButton.classList.toggle("text-light");
-  terminalBody.classList.toggle("text-dark");
-  terminalBody.classList.toggle("bg-light");
-  accordionItems.forEach((item) =>
-    item.classList.toggle("bg-material-grey-800")
+  multiToggle(navbar, "navbar-light", "navbar-dark");
+  multiToggle(
+    aboutSection,
+    "text-light",
+    "bg-100",
+    "bg-material-gray-background"
   );
-  accordionButtons.forEach((item) =>
-    item.classList.toggle("bg-material-grey-background")
-  );
-  projects.classList.toggle("text-light");
-  projects.classList.toggle("bg-material-grey-background-lighten");
+  multiToggle(terminalBody, "text-dark", "bg-light");
+  multiToggle(modalButton, "text-light");
+  multiToggle(projects, "text-light", "bg-material-gray-background-lighten");
+  accordionBodies.forEach((item) => {
+    multiToggle(item, "bg-material-gray-800");
+  });
+  accordionButtons.forEach((item) => {
+    multiToggle(item, "bg-material-gray-background", "bg-100");
+  });
   projectsCards.forEach((item) => {
-    item.classList.toggle("bg-material-grey-800");
-    item.classList.toggle("card-dark");
+    multiToggle(item, "bg-material-gray-800", "card-dark");
   });
 };
 
-// init background color and theme (dark)
-let color = colorGen(darkBackgroundModes);
-changeBG(color.next().value);
-terminalBody.classList.toggle("text-dark");
-terminalBody.classList.toggle("bg-light");
-toogleTheme();
-
-// init background color and theme (light)
-// let color = colorGen(lightBackgroundModes);
+// init background color and theme (dark preset)
+// let color = colorGen(darkBackgroundModes);
 // changeBG(color.next().value);
-// terminalBody.classList.toggle("text-dark");
-// terminalBody.classList.toggle("bg-light");
+// multiToggle(terminalBody, "text-dark", "bg-light");
+// navbar.classList.toggle("navbar-light");
+// aboutSection.classList.toggle("bg-100");
+// // accordionBodies.forEach((item) => {
+// //   multiToggle(item, "bg-100");
+// // });
+// accordionButtons.forEach((item) => multiToggle(item, "bg-100"));
+// toogleTheme();
+
+// init background color and theme (light preset)
+let color = colorGen(lightBackgroundModes);
+changeBG(color.next().value);
+multiToggle(terminalBody, "text-dark", "bg-light");
+navbar.classList.toggle("navbar-light");
+aboutSection.classList.toggle("bg-100");
+accordionButtons.forEach((item) => item.classList.toggle("bg-100"));
 
 // Dark mode toggle
 darkModeToggler.addEventListener("click", (e) => {
