@@ -1,5 +1,4 @@
 let icons = document.querySelectorAll(".ico");
-let length = icons.length;
 
 icons.forEach((item, index) => {
   item.addEventListener("mouseover", (e) => {

@@ -26,10 +26,10 @@ function toggleDisplay(el, disp) {
   item.addEventListener("click", () => {
     toggleDisplay(terminal, "block");
     if (item == terminalRed)
-      terminaDocklIcon.classList.toggle("li-first", false);
+      terminaDocklIcon.classList.toggle("li-open", false);
     if (item == terminaDocklIcon) {
       terminal.classList.remove("fade-in-animation");
-      terminaDocklIcon.classList.toggle("li-first", true);
+      terminaDocklIcon.classList.toggle("li-open", true);
     }
   })
 );
