@@ -4,12 +4,12 @@
 \Hi,|700|\
 
 
-\I'm Gabriel Ladzaretti - a Full Stack developer 
-proficient in the MERN stack web development.|1000|
+\I'm Gabriel Ladzaretti - a Full Stack developer.|500|
+Proficient with MERN stack development.|1000|
 I'm also a recent Computer Science graduate from the Open University of Israel (Hons).|700|\
 
 
-\Contact me & 
+\Contact Me & 
 let's work togather!\
 
 

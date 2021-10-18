@@ -36,12 +36,18 @@ let type = async (str, el, ms) => {
 // Type text file
 function typewriterFetch(selector, path, ms = 50, deley = 0) {
   fetch(path)
-    .then((res) => res.text())
-    .then((text) =>
+    .then((res) => {
+      if (res.ok) return res.text();
+      else throw new Error("Fetch - Something went wrong");
+    })
+    .then((text) => {
       setTimeout(() => {
         type(text, document.querySelector(selector), ms);
-      }, deley)
-    );
+      }, deley);
+    })
+    .catch((e) => {
+      console.error(e);
+    });
 }
 
 // Type string arg
