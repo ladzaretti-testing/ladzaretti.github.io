@@ -14,13 +14,13 @@ const FONT_SIZE_PX = 14;
 
 // colors preset
 const darkBackgroundModes = [
-  // "#282C34", // day
+  "#3498DB", // Curious Blue
   "#1565C0", // Denim
   "#1ABC9C", // Mountain Meadow
   "#E74C3C", // Cinnabar
   "#9B59B6", // Wisteria
   "#E67E22", // Zest
-  "#3498DB", // Curious Blue
+  "#282C34", // day
 ];
 const lightBackgroundModes = [
   // "#FAFAFA", // night
@@ -127,35 +127,37 @@ const toogleTheme = () => {
 };
 
 // init background color and theme (dark preset)
-// let color = colorGen(darkBackgroundModes);
-// changeBG(color.next().value);
-// multiToggle(terminalBody, "text-dark", "bg-light");
-// navbar.classList.toggle("navbar-light");
-// aboutSection.classList.toggle("bg-100");
-// // accordionBodies.forEach((item) => {
-// //   multiToggle(item, "bg-100");
-// // });
-// accordionButtons.forEach((item) => multiToggle(item, "bg-100"));
-// toogleTheme();
-
-// init background color and theme (light preset)
-let color = colorGen(lightBackgroundModes);
+let color = colorGen(darkBackgroundModes);
 changeBG(color.next().value);
 multiToggle(terminalBody, "text-dark", "bg-light");
 navbar.classList.toggle("navbar-light");
 aboutSection.classList.toggle("bg-100");
-accordionButtons.forEach((item) => item.classList.toggle("bg-100"));
+// accordionBodies.forEach((item) => {
+//   multiToggle(item, "bg-100");
+// });
+accordionButtons.forEach((item) => multiToggle(item, "bg-100"));
+toogleTheme();
+
+// init background color and theme (light preset)
+// let color = colorGen(lightBackgroundModes);
+// changeBG(color.next().value);
+// multiToggle(terminalBody, "text-dark", "bg-light");
+// navbar.classList.toggle("navbar-light");
+// aboutSection.classList.toggle("bg-100");
+// accordionButtons.forEach((item) => item.classList.toggle("bg-100"));
 
 // Dark mode toggle
 darkModeToggler.addEventListener("click", (e) => {
   const el = e.target;
   toogleTheme();
   if (el.dataset.dark_mode_on === "true") {
-    color = colorGen(darkBackgroundModes);
+    // color = colorGen(darkBackgroundModes); // for ligth first
+    color = colorGen(lightBackgroundModes); // for dark first
     changeBG(color.next().value);
     el.dataset.dark_mode_on = "false";
   } else {
-    color = colorGen(lightBackgroundModes);
+    // color = colorGen(lightBackgroundModes); // for ligth first
+    color = colorGen(darkBackgroundModes); // for dark first
     changeBG(color.next().value);
     el.dataset.dark_mode_on = "true";
   }
