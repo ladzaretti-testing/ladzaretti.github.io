@@ -2,3 +2,4 @@
 *.zip
 gen-url.txt
 ascii-art/
+.vscode
